@@ -1,0 +1,121 @@
+/**/
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600i,700,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    font-family: "Titillium Web", sans-serif;
+}
+
+#main-app-container{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+#webcam-container{
+    z-index: 0;
+    transition: height 1s, width 1s;
+}
+
+.experience-container {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    left:0;
+    position: absolute;
+}
+
+.page-container{
+    width: 100%;
+    /*max-width: 500px;*/
+    height: 100%;
+    background-color: white;
+    display: inline-block;
+    color: black;
+    position: relative;
+}
+
+.demo-item-container{
+    width: 100%;
+    height: 18%;
+    text-align: center;
+    line-height: 100px;
+    text-transform: uppercase;
+    background-color: black;
+    border-top: 2px white solid;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s, height 0.25s;
+}
+
+.demo-item-container:hover{
+    background-color: white;
+    color: black;
+    height: 30%;
+}
+
+
+.page-indicator-bubble-container{
+    width: 210px;
+    height: 60px;
+    margin-left: -105px;
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+}
+
+.page-indicator-bubble:hover{
+    opacity: 1.0;
+}
+
+.page-indicator-in-focus{
+    opacity: 1.0;
+}
+
+
+.page-indicator-bubble{
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+    margin: 5px 26px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.5;
+    background-color: black;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+#page-indicator-row-page-indicator-bubble-0{
+    background-image: url("../media/img/card-white.png");
+}
+
+#page-indicator-row-page-indicator-bubble-0{
+    background-size: 60% 60%;
+}
+
+#page-indicator-row-page-indicator-bubble-1{
+    background-size: 65% 65%;
+}
+
+#page-indicator-row-page-indicator-bubble-2{
+    background-size: 50% 50%;
+}
+
+#page-indicator-row-page-indicator-bubble-1{
+    background-image: url("../media/img/andy-white.png");
+}
+
+#page-indicator-row-page-indicator-bubble-2{
+    background-image: url("../media/img/house-white.png");
+}

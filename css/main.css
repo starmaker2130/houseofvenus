@@ -1,0 +1,350 @@
+/**/
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600i,700,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    font-family: "Titillium Web", sans-serif;
+}
+
+#main-app-container{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+.page-container{
+    width: 100%;
+    /*max-width: 500px;*/
+    height: 100%;
+    background-color: black;
+    display: inline-block;
+    color: white;
+    position: relative;
+}
+
+.preview-video-container{
+    width: 100%;
+    height: 55%;/*360px;*/
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 10%;
+    line-height: 150px;
+    text-align: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: height 0.8s, top 0.8s, opacity 0.5s;
+    z-index: 0;
+    opacity: 1.0;
+}
+
+.header-title-container{
+    color: white;
+    position: absolute;
+    top: 2%;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.header-subtitle-container{
+    color: white;
+    position: absolute;
+    top: 13%;
+    /*text-transform: uppercase;*/
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.preview-launcher-container{
+    position: absolute;
+    top: 30%;
+    width: 150px;
+    margin-left: -75px;
+    left: 50%;
+    opacity: 1.0;
+    transition: opacity 0.8s;
+}
+
+.preview-closer-container{
+    position: absolute;
+    bottom: 10%;
+    height: 50px;
+    width: 50px;
+    margin-left: -25px;
+    left: 50%;
+    opacity: 1.0;
+    border-radius: 50%;
+    border: 2px white solid;
+    line-height: 50px;
+    transition: opacity 0.8s;
+    display: none;
+    z-index: 100;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    font-weight: 900;
+}
+
+.preview-closer-container:hover{
+    background-color: rgba(255, 255, 255, 1.0);
+    color: black;
+}
+
+.preview-arrow-container{
+    text-align: center;
+    font-size: 30px;
+    line-height: 150px;
+    height: 150px;
+    width: 100%;
+    border-radius: 50%;
+    border: 2px white solid;
+    cursor: pointer;
+    transition: color 0.25s, background-color 0.25s;
+}
+
+.preview-arrow-container:hover{
+    background-color: white;
+    color: black;
+}
+
+.preview-label-container{
+    text-align: center;
+}
+
+.purchase-button-container{
+    color: red;
+    border: 3px red solid;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 800;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.purchase-button-container:hover{
+    color: white;
+    background-color: aquamarine;
+    border-color: aquamarine;
+}
+
+.page-indicator-bubble-container{
+    width: 210px;
+    height: 60px;
+    margin-left: -105px;
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+}
+
+.page-indicator-in-focus{
+    opacity: 1.0;
+}
+
+@media only screen and (min-width:  640px) {
+    .page-indicator-bubble:hover{
+        opacity: 1.0;
+    }
+
+    #card-preview-video-container{
+        background-size: 100% auto;
+    }
+
+    #aria-preview-video-container{
+        background-size: 100% auto;
+    }
+
+    /*.page-indicator-bubble{
+        background-color: white;
+    }*/
+
+    .purchase-button-container{
+        width: 20%;
+        height: 75px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        font-size: 24px;
+        margin-left: -10%;
+        line-height: 75px;
+    }
+}
+.page-indicator-bubble{
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+    margin: 5px 10px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    line-height: 50px;
+    text-align: center;
+}
+
+.page-indicator-bubble:hover{
+    opacity: 1.0;
+}
+
+#page-indicator-row-page-indicator-bubble-0{
+    background-image: url("../media/img/card-white.png");
+
+}
+
+#page-indicator-row-page-indicator-bubble-0{
+    background-size: 60% 60%;
+}
+
+#page-indicator-row-page-indicator-bubble-1{
+    background-size: 65% 65%;
+}
+
+#page-indicator-row-page-indicator-bubble-2{
+    background-size: 50% 50%;
+}
+
+#page-indicator-row-page-indicator-bubble-1{
+    background-image: url("../media/img/andy-white.png");
+}
+
+#page-indicator-row-page-indicator-bubble-2{
+    background-image: url("../media/img/house-white.png");
+}
+@media only screen and (max-width: 640px) {
+
+    #card-preview-video-container{
+        background-size: auto 100%;
+    }
+
+    #aria-preview-video-container{
+        background-size: auto 100%;
+    }
+
+    .purchase-button-container{
+        width: 150px;
+        height: 50px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        margin-left: -75px;
+        line-height: 50px;
+    }
+
+    .page-indicator-bubble{
+        background-color: black;
+    }
+}
+
+.site-menu-button-container{
+    background-image: url("../media/img/hov_ig_logo.png");
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.site-menu-container{
+    z-index: 49;
+    width: 350px;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0 0 0 15px;
+    border: 0;
+    font-size: 0;
+    transition: height 1s, opacity 1s;
+    cursor: pointer;
+}
+
+.site-menu-container-hidden{
+    height: 0px;
+}
+
+.site-menu-item{
+    width: 100%;
+    height: 33%;
+    display: inline-block;
+    font-size: 24px;
+    background-color: white;
+    line-height: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    border: 0;
+    transition: color 0.5s, background-color 0.5s, height 1s, opacity 1s;
+}
+
+.site-menu-item:hover{
+    background-color: black;
+    color: white;
+}
+
+#site-menu-site-menu-item-2{
+    border-bottom-left-radius:  15px;
+}
+
+.site-menu-subitem{
+
+}
+
+.profile-container{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px black solid;
+}
+
+.company-blurb-container{
+    position: absolute;
+    top: 70%;
+    width: 80%;
+    left: 10%;
+    height: 150px;
+    overflow-y: scroll;
+    text-align: center;
+    font-size: 24px;
+}
+
+#card-preview-video-container{
+    background-image: url("../media/img/card_bg_source.gif");
+}
+
+#aria-preview-video-container{
+    background-image: url("../media/img/aria_bg_source.gif");
+}
+
+#mp4-media-video-container{
+    position absolute;
+    z-index: -1;
+    display: none;
+    width: 100%;
+    height: auto;
+    top: 10%;
+    left: 0;
+}
