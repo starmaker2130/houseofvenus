@@ -34,7 +34,7 @@ body, html{
     height: 200px;
     line-height: 200px;
     text-align: center;
-    font-size: 40px;
+    font-size: 80px;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -57,16 +57,16 @@ body, html{
 
 #preview-video-button-container{
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     top: 50%;
     left: 50%;
-    margin: -75px 0 0 -75px;
+    margin: -150px 0 0 -150px;
     border-radius: 50%;
     border: 5px white solid;
     text-align: center;
     line-height: 150px;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 700;
     color: white;
     
@@ -77,11 +77,11 @@ body, html{
 }
 
 #go-to-next-one-button-container{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     left: 50%;
-    margin-left: -25px;
+    margin-left: -50px;
     border: 2px white solid;
     font-size: 0;
     
@@ -132,8 +132,8 @@ body, html{
 }
 
 #go-to-previous-zero-button-container, #go-to-previous-one-button-container{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     /*left: 50%;
     margin-left: -25px;*/
@@ -162,7 +162,8 @@ body, html{
 }
 
 .option-button-title-container, .venture-option-title-container{
-    font-size: 30px;
+    font-size: 60px;
+    line-height: 300px;
     text-transform: uppercase;
 }
 

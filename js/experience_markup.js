@@ -794,8 +794,8 @@ var Experience = {
                             document.getElementById("afs-view-site-button-container").style.display = "block";
                             document.getElementById("afs-view-site-button-container").style.opacity = 1.0;
 
-                            document.getElementById("afs-description-container").style.fontSize = "20px";
-                            document.getElementById("afs-view-site-button-container").style.fontSize = "20px";
+                            document.getElementById("afs-description-container").style.fontSize = "40px";
+                            document.getElementById("afs-view-site-button-container").style.fontSize = "40px";
                             setTimeout(function(){
                                 appPreviewInFocus = "afs-venture-option-container";
                             }, 550);
