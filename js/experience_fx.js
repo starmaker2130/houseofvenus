@@ -17,7 +17,7 @@ function openParkMap(){
     console.log("openParkMap in new tab at http://oldrowmary.land");
 }
 
-function switchToPage(page){
+/*function switchToPage(page){
     let target = page;
     let pages = [
         "card",
@@ -48,7 +48,7 @@ function switchToPage(page){
 
         })();
     }
-}
+}*/
 
 function playPreviewOfProductInFocus(){
     console.log("playPreviewOfProductInFocus()");
@@ -103,7 +103,7 @@ function closePreviewOfProductInFocus(){
     }, 1000);
 }
 
-function toggleMenuVisibility(){
+/*function toggleMenuVisibility(){
     console.log("toggleMenuVisibility()");
     console.log(mainMenuVisible);
 
@@ -148,7 +148,7 @@ function toggleMenuVisibility(){
         }
         mainMenuVisible = true;
     }
-}
+}*/
 
 function processChildren(secondary){
     let children = secondary;
@@ -236,8 +236,8 @@ function processChildren(secondary){
             }
         })();
     }
-    toggleMenuVisibility();
-    switchToPage(pageInFocus);
+    //toggleMenuVisibility();
+    //switchToPage(pageInFocus);
 }
 
 var mainMenuVisible = true;

@@ -18,7 +18,7 @@ var Experience = {
     ],
     objectsubject: [
         {
-            name: "card",
+            name: "home",
             type: "container",
             class: "page-container",
             id: function(){
@@ -30,10 +30,10 @@ var Experience = {
             },
             index: 0,
             children: [
-                3,  // preview-video-container
-                4,  // header-title-container
-                5,  // header-subtitle-container
-                9, // purchase-button-container
+                1,  // #application-title-container
+                2,  // #preview-video-button-container
+                3,  // #go-to-next-one-button-container
+                4, // #go-to-next-one-indicator-container
             ],
             parent: [],
             element: function(){
@@ -45,24 +45,22 @@ var Experience = {
             }
         },
         {
-            name: "aria",
+            name: "application-title-container",
             type: "container",
-            class: "page-container",
+            class: "title-container",
             id: function(){
                 let self = this;
-                return ""+self.name+"-"+self.class;
+                return self.name;
             },
             index: 1,
             content: function(){
-                return "";
+                return "house of venus";
             },
             children: [
-                3,  // preview-video-container
-                4,  // header-title-container
-                5,  // header-subtitle-container
-                9, // purchase-button-container
             ],
-            parent: [],
+            parent: [
+                0
+            ],
             element: function(){
                 let self = this;
                 let el = document.createElement("div");
@@ -72,24 +70,22 @@ var Experience = {
             }
         },
         {
-            name: "company",
+            name: "preview",
             type: "container",
-            class: "page-container",
+            class: "video-button-container",
             id: function(){
                 let self = this;
                 return ""+self.name+"-"+self.class;
             },
             index: 2,
             content: function(){
-                return "";
+                return "▶️";
             },
             children: [
-                3,  // preview-video-container
-                4,  // header-title-container
-                5,  // header-subtitle-container
-                9, // purchase-button-container
             ],
-            parent: [],
+            parent: [
+                0
+            ],
             element: function(){
                 let self = this;
                 let el = document.createElement("div");
@@ -99,12 +95,12 @@ var Experience = {
             }
         },
         {
-            name: "multiple",
+            name: "go-to-next-one",
             type: "container",
-            class: "preview-video-container",
-            id: function(prefix){
+            class: "button-container",
+            id: function(){
                 let self = this;
-                return prefix+"-"+self.class;
+                return ""+self.name+"-"+self.class;
             },
             content: function(pointer){
                 let self = this;
@@ -114,9 +110,7 @@ var Experience = {
             index: 3,
             children: [],
             parent: [
-                0,
-                1,
-                2,
+                0
             ],
             element: function(pointer){
                 let self = this;
@@ -127,28 +121,20 @@ var Experience = {
             }
         },
         {
-            name: "multiple",
+            name: "go-to-next-one",
             type: "container",
-            class: "header-title-container",
-            id: function(prefix){
+            class: "indicator-container",
+            id: function(){
                 let self = this;
-                return prefix+"-"+self.class;
+                return ""+self.name+"-"+self.class;
             },
             content: function(pointer){
-                let self = this;
-                //console.log(pointer);
-                let value =pointer.toUpperCase();
-                if(value=="COMPANY"){
-                    value="HOUSE OF VENUS"
-                }
-                return value;
+                return "▼";
             },
             index: 4,
             children: [],
             parent: [
-                0,
-                1,
-                2,
+                0
             ],
             element: function(pointer){
                 let self = this;
@@ -159,54 +145,24 @@ var Experience = {
             }
         },
         {
-            name: "multiple",
+            name: "main-options",
             type: "container",
-            class: "header-subtitle-container",
-            id: function(prefix){
-                let self = this;
-                return prefix+"-"+self.class;
-            },
-            content: function(pointer){
-                let self = this;
-                let values = {
-                    CARD: "creative Augmented Reality kinectome",
-                    ARIA: "Augmented Reality intelligent assistant",
-                    COMPANY: ""
-                }
-                return values[pointer.toUpperCase()];
-            },
-            index: 5,
-            children: [],
-            parent: [
-                0,
-                1,
-                2,
-            ],
-            element: function(pointer){
-                let self = this;
-                let el = document.createElement("div");
-                el.setAttribute("id", self.id(pointer));
-                el.classList.add(self.class);
-                return el;
-            }
-        },
-        {
-            name: "preview-launcher",
-            type: "button-container",
-            class: "preview-launcher-container",
+            class: "page-container",
             id: function(){
                 let self = this;
-                return self.name;
+                return ""+self.name+"-"+self.class;
             },
-            index: 6,
-            children: [
-                7, // preview-arrow-container
-                8, // preview-label-container
-            ],
-            parent: [],
             content: function(){
                 return "";
             },
+            index: 5,
+            children: [
+                6,  //#go-to-previous-zero-indicator-container
+                7,   //#go-to-previous-zero-button-container
+                8, // #market-option-button-container
+                9, //#about-option-button-container
+            ],
+            parent: [],
             element: function(){
                 let self = this;
                 let el = document.createElement("div");
@@ -216,79 +172,98 @@ var Experience = {
             }
         },
         {
-            name: "preview-arrow",
-            type: "content-container",
-            class: "preview-arrow-container",
+            name: "go-to-previous-zero",
+            type: "container",
+            class: "indicator-container",
             id: function(){
                 let self = this;
-                return self.name;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                return "▲";
+            },
+            index: 6,
+            children: [],
+            parent: [
+                5
+            ],
+            element: function(pointer){
+                let self = this;
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
+                el.classList.add(self.class);
+                return el;
+            }
+        },
+        {
+            name: "go-to-previous-zero",
+            type: "container",
+            class: "button-container",
+            id: function(){
+                let self = this;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "";
             },
             index: 7,
             children: [],
             parent: [
-                6
+                5
             ],
-            content: function(pointer){
-                let self = this;
-            //    console.log(pointer);
-                //"&#x25b6;"
-                return "▶";
-            },
-            element: function(){
+            element: function(pointer){
                 let self = this;
                 let el = document.createElement("div");
-                el.setAttribute("id", self.id());
+                el.setAttribute("id", self.id(pointer));
                 el.classList.add(self.class);
                 return el;
             }
         },
         {
-            name: "preview-label",
+            name: "market",
             type: "container",
-            class: "preview-label-container",
+            class: "option-button-container",
             id: function(){
                 let self = this;
-                return self.name;
+                return ""+self.name+"-"+self.class;
             },
             content: function(pointer){
                 let self = this;
-            //    console.log(pointer);
+                //console.log(pointer);
                 return "";
             },
             index: 8,
             children: [],
             parent: [
-                6
+                5
             ],
-            element: function(){
+            element: function(pointer){
                 let self = this;
                 let el = document.createElement("div");
-                el.setAttribute("id", self.id());
+                el.setAttribute("id", self.id(pointer));
                 el.classList.add(self.class);
                 return el;
             }
         },
         {
-            name: "multiple",
-            type: "button-container",
-            class: "purchase-button-container",
-            id: function(prefix){
+            name: "about",
+            type: "container",
+            class: "option-button-container",
+            id: function(){
                 let self = this;
-                return prefix+"-"+self.class;
+                return ""+self.name+"-"+self.class;
             },
             content: function(pointer){
                 let self = this;
-                let optionValues = {
-                    "CARD": "BUY NOW",
-                    "ARIA": "PREORDER"
-                };
-                return optionValues[pointer.toUpperCase()];
+                //console.log(pointer);
+                return "";
             },
             index: 9,
             children: [],
             parent: [
-                0,
-                1,
+                5
             ],
             element: function(pointer){
                 let self = this;
@@ -299,76 +274,23 @@ var Experience = {
             }
         },
         {
-            name: "page-indicator-row",
+            name: "market",
             type: "container",
-            class: "page-indicator-bubble-container",
+            class: "option-button-title-container",
             id: function(){
                 let self = this;
-                return self.name;
+                return ""+self.name+"-"+self.class;
             },
-            index: 10,
-            children: [
-                11, // page-indicator-bubble
-            ],
-            parent: [],
-            content: function(){
-                return "";
-            },
-            element: function(){
-                let self = this;
-                let el = document.createElement("div");
-                el.setAttribute("id", self.id());
-                el.classList.add(self.class);
-                return el;
-            }
-        },
-        {
-            name: "multiple",
-            type: "button-container",
-            class: "page-indicator-bubble",
-            id: function(prefix){
-                let self = this;
-                self.count++; /*there is a for loop in the parent closure, this for loop completes faster than the funciton inside of it is instantiated thus this count value adds by three mean while the document nodes add the correct amount)*/
-                //console.log(self.count);   /* troubleshooting for: see comment above [line 283] */
-                let a = self.count/*0;
-                if(self.count==1||self.count==2){
-                    a = 0;
-                }
-                if(self.count==3||self.count==4){
-                    a = 1;
-                }
-                if(self.count==5||self.count==6){
-                    a = 2;
-                }*/
-                self.a = a;
-                let addon = prefix+"-"+self.class+"-"+a;   /* see comment above [line 283] */
-
-                return addon /* see comment above [line 283] */
-            },
-            iterati: 0,
-            count: -1,
-            buttonCount: 0,
-            index: 11,
-            children: [],
-            parent: [ /* see comment above [line 283] */
-                10,
-                10,
-                10
-            ],
             content: function(pointer){
                 let self = this;
-                let button = [
-                    0,
-                    1,
-                    2,
-                ];
-                let count = self.buttonCount;
-                if(pointer=="page-indicator-row"){
-
-                }
                 //console.log(pointer);
-                return ".";
+                return "market";
             },
+            index: 10,
+            children: [],
+            parent: [
+                8
+            ],
             element: function(pointer){
                 let self = this;
                 let el = document.createElement("div");
@@ -378,19 +300,55 @@ var Experience = {
             }
         },
         {
-            name: "site-menu-button",
-            type: "button-container",
-            class: "site-menu-button-container",
+            name: "about",
+            type: "container",
+            class: "option-button-title-container",
             id: function(){
                 let self = this;
-                return self.name;
+                return ""+self.name+"-"+self.class;
             },
-            index: 12,
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "about";
+            },
+            index: 11,
             children: [],
-            parent: [],
+            parent: [
+                9
+            ],
+            element: function(pointer){
+                let self = this;
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
+                el.classList.add(self.class);
+                return el;
+            }
+        },
+        {
+            name: "market-option",
+            type: "container",
+            class: "page-container",
+            id: function(){
+                let self = this;
+                return ""+self.name+"-"+self.class;
+            },
             content: function(){
                 return "";
             },
+            index: 12,
+            children: [
+                13,
+                14,
+                15,
+                17,
+                19
+                /*6,  //#go-to-previous-zero-indicator-container
+                7,   //#go-to-previous-zero-button-container
+                8, // #market-option-button-container
+                9, //#about-option-button-container*/
+            ],
+            parent: [],
             element: function(){
                 let self = this;
                 let el = document.createElement("div");
@@ -400,55 +358,46 @@ var Experience = {
             }
         },
         {
-            name: "site-menu",
+            name: "go-to-previous-one",
             type: "container",
-            class: "site-menu-container",
+            class: "indicator-container",
             id: function(){
                 let self = this;
-                return self.name;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                return "▲";
             },
             index: 13,
             children: [],
-            parent: [],
-            content: function(){
-                return "";
-            },
-            element: function(){
+            parent: [
+                12
+            ],
+            element: function(pointer){
                 let self = this;
                 let el = document.createElement("div");
-                el.setAttribute("id", self.id());
+                el.setAttribute("id", self.id(pointer));
                 el.classList.add(self.class);
                 return el;
             }
         },
         {
-            name: "multiple",
-            type: "button-container",
-            class: "site-menu-item",
-            id: function(prefix){
+            name: "go-to-previous-one",
+            type: "container",
+            class: "button-container",
+            id: function(){
                 let self = this;
-                self.count++;
-                let a = self.count;
-                self.a = a;
-                return prefix+"-"+self.class+"-"+a;
+                return ""+self.name+"-"+self.class;
             },
-            count: -1,
-            a: 0,
             content: function(pointer){
                 let self = this;
-                let menuItems = [
-                    "website",
-                    "demos",
-                    "old row"
-                ];
-                return menuItems[self.a];
+                //console.log(pointer);
+                return "";
             },
             index: 14,
             children: [],
             parent: [
-                13,
-                13,
-                13
+                12
             ],
             element: function(pointer){
                 let self = this;
@@ -459,19 +408,25 @@ var Experience = {
             }
         },
         {
-            name: "multiple",
+            name: "tsh",
             type: "container",
-            class: "site-menu-subitem",
-            id: function(prefix){
+            class: "venture-option-container",
+            id: function(){
                 let self = this;
-                return prefix+"-"+self.class;
+                return ""+self.name+"-"+self.class;
             },
-            content: function(){
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
                 return "";
             },
             index: 15,
-            children: [],
-            parent: [],
+            children: [
+                /*16*/
+            ],
+            parent: [
+                12
+            ],
             element: function(pointer){
                 let self = this;
                 let el = document.createElement("div");
@@ -481,19 +436,23 @@ var Experience = {
             }
         },
         {
-            name: "multiple",
+            name: "tsh",
             type: "container",
-            class: "profile-container",
-            id: function(prefix){
+            class: "venture-option-title-container",
+            id: function(){
                 let self = this;
-                return prefix+"-"+self.class;
+                return ""+self.name+"-"+self.class;
             },
-            content: function(){
-                return "";
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "talk.show.host";
             },
             index: 16,
             children: [],
-            parent: [],
+            parent: [
+                15
+            ],
             element: function(pointer){
                 let self = this;
                 let el = document.createElement("div");
@@ -503,106 +462,109 @@ var Experience = {
             }
         },
         {
-            name: "company-blurb",
-            type: "blurb-container",
-            class: "company-blurb-container",
+            name: "foodid",
+            type: "container",
+            class: "venture-option-container",
             id: function(){
                 let self = this;
-                return self.name;
+                return ""+self.name+"-"+self.class;
             },
-            index: 17,
-            children: [],
-            parent: [
-                2
-            ],
             content: function(pointer){
                 let self = this;
-            //    console.log(pointer);
-
-                return `<p>Realize your visions, without expertise in coding or robotics</p><p style="margin-top: 2%;"> The world is <span style="font-style: italic; font-weight: 600;">your</span> desktop</p>`;
-                 /*The House of Venus, Benefit Corporation empowers entrepreneurs of all
-                 ages to to engage their communities via immersive media shared across an open access
-                 WiFi network ("HOUSE OF VENUS"). Developers, creators, artists, and inventors can leverage smart
-                 city technolgy -- ranging from sentient robotics to augmented reality -- to design
-                 experiences that truly reflect their imaginations and address their practical needs.*/
+                //console.log(pointer);
+                return "";
             },
-            element: function(){
+            index: 17,
+            children: [
+                /*18*/
+            ],
+            parent: [
+                12
+            ],
+            element: function(pointer){
                 let self = this;
                 let el = document.createElement("div");
-                el.setAttribute("id", self.id());
+                el.setAttribute("id", self.id(pointer));
                 el.classList.add(self.class);
                 return el;
             }
         },
         {
-            name: "preview-closer",
-            type: "button-container",
-            class: "preview-closer-container",
+            name: "foodid",
+            type: "container",
+            class: "venture-option-title-container",
             id: function(){
                 let self = this;
-                return self.name;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "foodid";
             },
             index: 18,
             children: [],
-            parent: [],
-            content: function(){
-                return "x";
-            },
-            element: function(){
+            parent: [
+                17
+            ],
+            element: function(pointer){
                 let self = this;
                 let el = document.createElement("div");
-                el.setAttribute("id", self.id());
+                el.setAttribute("id", self.id(pointer));
                 el.classList.add(self.class);
                 return el;
             }
         },
         {
-            name: "mp4-media",
-            type: "media-container",
-            class: "video-container",
+            name: "afs",
+            type: "container",
+            class: "venture-option-container",
             id: function(){
                 let self = this;
-                return self.name+"-"+self.class;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "";
             },
             index: 19,
             children: [
-                20
+                /*20*/
             ],
-            parent: [],
-            content: function(){
-                return "";
-            },
-            element: function(){
+            parent: [
+                12
+            ],
+            element: function(pointer){
                 let self = this;
-                let el = document.createElement("video");
-                el.setAttribute("id", self.id());
-                el.setAttribute("controls", "");
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
                 el.classList.add(self.class);
                 return el;
             }
         },
         {
-            name: "video-source",
-            type: "source-container",
-            class: "media-reference",
+            name: "afs",
+            type: "container",
+            class: "venture-option-title-container",
             id: function(){
                 let self = this;
-                return self.name+"-"+self.class;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "anne's flower shop";
             },
             index: 20,
             children: [],
             parent: [
                 19
             ],
-            content: function(){
-                return "";
-            },
-            element: function(){
+            element: function(pointer){
                 let self = this;
-                let el = document.createElement("source");
-                el.setAttribute("id", self.id());
-                el.setAttribute("src", "./media/vid/ManCityVsWatford.mp4");
-                el.setAttribute("type", "video/mp4");
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
                 el.classList.add(self.class);
                 return el;
             }
