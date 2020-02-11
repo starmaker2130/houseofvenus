@@ -79,7 +79,7 @@ var Experience = {
             },
             index: 2,
             content: function(){
-                return "▶️";
+                return "";
             },
             children: [
             ],
@@ -96,7 +96,7 @@ var Experience = {
         },
         {
             name: "go-to-next-one",
-            type: "container",
+            type: "button-container",
             class: "button-container",
             id: function(){
                 let self = this;
@@ -122,7 +122,7 @@ var Experience = {
         },
         {
             name: "go-to-next-one",
-            type: "container",
+            type: "button-container",
             class: "indicator-container",
             id: function(){
                 let self = this;
@@ -173,7 +173,7 @@ var Experience = {
         },
         {
             name: "go-to-previous-zero",
-            type: "container",
+            type: "button-container",
             class: "indicator-container",
             id: function(){
                 let self = this;
@@ -197,7 +197,7 @@ var Experience = {
         },
         {
             name: "go-to-previous-zero",
-            type: "container",
+            type: "button-container",
             class: "button-container",
             id: function(){
                 let self = this;
@@ -223,7 +223,7 @@ var Experience = {
         },
         {
             name: "market",
-            type: "container",
+            type: "button-container",
             class: "option-button-container",
             id: function(){
                 let self = this;
@@ -359,7 +359,7 @@ var Experience = {
         },
         {
             name: "go-to-previous-one",
-            type: "container",
+            type: "button-container",
             class: "indicator-container",
             id: function(){
                 let self = this;
@@ -383,7 +383,7 @@ var Experience = {
         },
         {
             name: "go-to-previous-one",
-            type: "container",
+            type: "button-container",
             class: "button-container",
             id: function(){
                 let self = this;
@@ -409,7 +409,7 @@ var Experience = {
         },
         {
             name: "tsh",
-            type: "container",
+            type: "button-container",
             class: "venture-option-container",
             id: function(){
                 let self = this;
@@ -463,7 +463,7 @@ var Experience = {
         },
         {
             name: "foodid",
-            type: "container",
+            type: "button-container",
             class: "venture-option-container",
             id: function(){
                 let self = this;
@@ -517,7 +517,7 @@ var Experience = {
         },
         {
             name: "afs",
-            type: "container",
+            type: "button-container",
             class: "venture-option-container",
             id: function(){
                 let self = this;
@@ -569,6 +569,162 @@ var Experience = {
                 return el;
             }
         },
+        {
+            name: "tsh",
+            type: "container",
+            class: "description-container",
+            id: function(){
+                let self = this;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "talk.show.host description text goes here";
+            },
+            index: 21,
+            children: [],
+            parent: [
+                15
+            ],
+            element: function(pointer){
+                let self = this;
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
+                el.classList.add(self.class);
+                return el;
+            }
+        },
+        {
+            name: "tsh",
+            type: " button-container",
+            class: "view-site-button-container",
+            id: function(){
+                let self = this;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "view site";
+            },
+            index: 22,
+            children: [],
+            parent: [
+                15
+            ],
+            element: function(pointer){
+                let self = this;
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
+                el.classList.add(self.class);
+                return el;
+            }
+        },
+        {
+            name: "foodid",
+            type: "container",
+            class: "description-container",
+            id: function(){
+                let self = this;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "foodid description text goes here";
+            },
+            index: 23,
+            children: [],
+            parent: [
+                17
+            ],
+            element: function(pointer){
+                let self = this;
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
+                el.classList.add(self.class);
+                return el;
+            }
+        },
+        {
+            name: "foodid",
+            type: " button-container",
+            class: "view-site-button-container",
+            id: function(){
+                let self = this;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "view site";
+            },
+            index: 24,
+            children: [],
+            parent: [
+                17
+            ],
+            element: function(pointer){
+                let self = this;
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
+                el.classList.add(self.class);
+                return el;
+            }
+        },
+        {
+            name: "afs",
+            type: "container",
+            class: "description-container",
+            id: function(){
+                let self = this;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "anne's flower shop description text goes here";
+            },
+            index: 25,
+            children: [],
+            parent: [
+                19
+            ],
+            element: function(pointer){
+                let self = this;
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
+                el.classList.add(self.class);
+                return el;
+            }
+        },
+        {
+            name: "afs",
+            type: " button-container",
+            class: "view-site-button-container",
+            id: function(){
+                let self = this;
+                return ""+self.name+"-"+self.class;
+            },
+            content: function(pointer){
+                let self = this;
+                //console.log(pointer);
+                return "view site";
+            },
+            index: 26,
+            children: [],
+            parent: [
+                19
+            ],
+            element: function(pointer){
+                let self = this;
+                let el = document.createElement("div");
+                el.setAttribute("id", self.id(pointer));
+                el.classList.add(self.class);
+                return el;
+            }
+        },
     ],
     subjectobject: [],
     effector: [
@@ -577,43 +733,148 @@ var Experience = {
             event: "click",
             fx: function(target){
                 let val = target;
-
+                
                 console.log("------------------------------------");
                 console.log(`${val}`);
                 console.log("------------------------------------");
                 switch(val){
-                    case "preview-launcher":
-                        playPreviewOfProductInFocus();
+                    case "go-to-next-one-indicator-container":
+                        pp();
                         break;
-                    case "site-menu-button":
-                        toggleMenuVisibility();
+                    case "go-to-previous-one-indicator-container":
+                        pp();
                         break;
-                    case "site-menu-site-menu-item-0":
-                        toggleSiteSubMenuVisibility();
+                    case "go-to-next-one-button-container":
+                        pp();
                         break;
-                    case "site-menu-site-menu-item-1":
-                        openDemonstrationsGallery();
+                    case "go-to-previous-one-button-container":
+                        pp();
+                        
                         break;
-                    case "card-purchase-button-container":
-                        openCheckout('card');
+                    case "go-to-previous-zero-button-container":
+                        qq();
                         break;
-                    case "aria-purchase-button-container":
-                        openCheckout('aria');
+                    case "go-to-previous-zero-indicator-container":
+                        qq();
                         break;
-                    case "site-menu-site-menu-item-2":
-                        openParkMap();
+                    case "market-option-button-container":
+                        rr();
                         break;
-                    case "page-indicator-row-page-indicator-bubble-0":
-                        switchToPage(0);
+                    case "afs-view-site-button-container":
+                        console.log("yououuoi");
+                        window.open("http://annesfloweshop.com", "_blank");
                         break;
-                    case "page-indicator-row-page-indicator-bubble-1":
-                        switchToPage(1);
+                    case "afs-venture-option-container":
+                        if(appPreviewInFocus!=null){
+                            let previousFocus = document.getElementById(appPreviewInFocus);
+                            previousFocus.style.height = "33%";
+                            previousFocus.style.lineHeight = "200px";
+                            let prefix = appPreviewInFocus.substring(0, appPreviewInFocus.indexOf("-"));
+                            document.getElementById(prefix+"-description-container").style.opacity = 0;
+                            document.getElementById(prefix+"-view-site-button-container").style.opacity = 0;
+                            
+                            setTimeout(function(){
+                                document.getElementById(prefix+"-description-container").style.display = "none";
+                                document.getElementById(prefix+"-view-site-button-container").style.display = "none";
+                            }, 500);
+                            
+                            document.getElementById(prefix+"-description-container").style.fontSize = "0px";
+                            document.getElementById(prefix+"-view-site-button-container").style.fontSize = "0px";
+                            
+                            if(appPreviewInFocus=="afs-venture-option-container"){
+                                window.open("http://annesflowershop.com", "_blank");
+                            }
+                        }
+                        if(appPreviewInFocus!="afs-venture-option-container"){
+                            document.getElementById("afs-venture-option-container").style.height = "50%";
+                            document.getElementById("afs-venture-option-container").style.lineHeight = "50px";
+
+                            document.getElementById("afs-description-container").style.display = "block";
+                            document.getElementById("afs-description-container").style.opacity = 1.0;
+                            document.getElementById("afs-view-site-button-container").style.display = "block";
+                            document.getElementById("afs-view-site-button-container").style.opacity = 1.0;
+
+                            document.getElementById("afs-description-container").style.fontSize = "20px";
+                            document.getElementById("afs-view-site-button-container").style.fontSize = "20px";
+                            setTimeout(function(){
+                                appPreviewInFocus = "afs-venture-option-container";
+                            }, 550);
+                        }
+                        else{
+                            appPreviewInFocus = null;
+                        }
                         break;
-                    case "page-indicator-row-page-indicator-bubble-2":
-                        switchToPage(2);
+                    case "foodid-venture-option-container":
+                        if(appPreviewInFocus!=null){
+                            let previousFocus = document.getElementById(appPreviewInFocus);
+                            previousFocus.style.height = "33%";
+                            previousFocus.style.lineHeight = "200px";
+                            let prefix = appPreviewInFocus.substring(0, appPreviewInFocus.indexOf("-"));
+                            document.getElementById(prefix+"-description-container").style.opacity = 0;
+                            document.getElementById(prefix+"-view-site-button-container").style.opacity = 0;
+                            
+                            setTimeout(function(){
+                                document.getElementById(prefix+"-description-container").style.display = "none";
+                                document.getElementById(prefix+"-view-site-button-container").style.display = "none";
+                            }, 500);
+                            
+                            document.getElementById(prefix+"-description-container").style.fontSize = "0px";
+                            document.getElementById(prefix+"-view-site-button-container").style.fontSize = "0px";
+                        }
+                        if(appPreviewInFocus!="foodid-venture-option-container"){
+                            document.getElementById("foodid-venture-option-container").style.height = "50%";
+                            document.getElementById("foodid-venture-option-container").style.lineHeight = "50px";
+
+                            document.getElementById("foodid-description-container").style.display = "block";
+                            document.getElementById("foodid-description-container").style.opacity = 1.0;
+                            document.getElementById("foodid-view-site-button-container").style.display = "block";
+                            document.getElementById("foodid-view-site-button-container").style.opacity = 1.0;
+
+                            document.getElementById("foodid-description-container").style.fontSize = "20px";
+                            document.getElementById("foodid-view-site-button-container").style.fontSize = "20px";
+                            setTimeout(function(){
+                                appPreviewInFocus = "foodid-venture-option-container";
+                            }, 550);
+                        }
+                        else{
+                            appPreviewInFocus = null;
+                        }
                         break;
-                    case "preview-closer":
-                        closePreviewOfProductInFocus();
+                    case "tsh-venture-option-container":
+                        if(appPreviewInFocus!=null){
+                            let previousFocus = document.getElementById(appPreviewInFocus);
+                            previousFocus.style.height = "33%";
+                            previousFocus.style.lineHeight = "200px";
+                            let prefix = appPreviewInFocus.substring(0, appPreviewInFocus.indexOf("-"));
+                            document.getElementById(prefix+"-description-container").style.opacity = 0;
+                            document.getElementById(prefix+"-view-site-button-container").style.opacity = 0;
+                            
+                            setTimeout(function(){
+                                document.getElementById(prefix+"-description-container").style.display = "none";
+                                document.getElementById(prefix+"-view-site-button-container").style.display = "none";
+                            }, 500);
+                            
+                            document.getElementById(prefix+"-description-container").style.fontSize = "0px";
+                            document.getElementById(prefix+"-view-site-button-container").style.fontSize = "0px";
+                        }
+                        if(appPreviewInFocus!="tsh-venture-option-container"){
+                            document.getElementById("tsh-venture-option-container").style.height = "50%";
+                            document.getElementById("tsh-venture-option-container").style.lineHeight = "50px";
+                            
+                            document.getElementById("tsh-description-container").style.display = "block";
+                            document.getElementById("tsh-description-container").style.opacity = 1.0;
+                            document.getElementById("tsh-view-site-button-container").style.display = "block";
+                            document.getElementById("tsh-view-site-button-container").style.opacity = 1.0;
+
+                            document.getElementById("tsh-description-container").style.fontSize = "20px";
+                            document.getElementById("tsh-view-site-button-container").style.fontSize = "20px";
+                            setTimeout(function(){
+                                appPreviewInFocus = "tsh-venture-option-container";
+                            }, 550);
+                        }
+                        else{
+                            appPreviewInFocus = null;
+                        }
                         break;
                     default:
                         console.log("no specific functionality defined for this target.");
@@ -626,3 +887,29 @@ var Experience = {
     selector: [],
 
 };
+
+var appPreviewInFocus = null;
+
+function pp(){
+    console.log("scroll to top of [5]");
+    
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#main-options-page-container").offset().top
+    }, 1000);
+}
+
+function qq(){
+    console.log("scroll to top of [0]");
+    
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#home-page-container").offset().top
+    }, 1000);
+}
+
+function rr(){
+    console.log("scroll to top of [12]");
+    
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#market-option-page-container").offset().top
+    }, 1000);
+}
